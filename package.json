@@ -8,7 +8,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test": "npx jest",
-    "test:loki": "npm run build-storybook && npx loki --requireReference --reactUri file:./storybook-static"
+    "test:loki": "npm run build-storybook && npx loki update --requireReference --reactUri file:./storybook-static"
   },
   "repository": {
     "type": "git",
