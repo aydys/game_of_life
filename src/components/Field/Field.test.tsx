@@ -1,4 +1,4 @@
-import { onClick } from "./Cell";
+import { onClick } from "./Field";
 
 it("handle click event to Cell", () => {
   console.log = jest.fn();

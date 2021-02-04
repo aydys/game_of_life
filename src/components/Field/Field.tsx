@@ -5,6 +5,8 @@ interface Props {
   field?: number[][];
 }
 
+export const onClick = (children: number) => console.log(children);
+
 export const Field: FC<Props> = ({
   field = [
     [1, 2, 3],
@@ -14,7 +16,7 @@ export const Field: FC<Props> = ({
   return (
     <div>
       {field?.map((row, y) => [
-        row?.map((filled, x) => <Cell key={`${x}_${y}`}>{filled}</Cell>),
+        row?.map((filled, x) => <Cell key={`${x}_${y}`} onClick={onClick}>{filled}</Cell>),
         y !== row.length - 1 ? <br key={y} /> : null,
       ])}
     </div>
