@@ -8,7 +8,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test": "npx jest",
-    "test:loki": "npm run build-storybook && npx loki --requireReference --reactUri file:./storybook-static"
+    "test:loki": "npm run build-storybook && npx loki update --requireReference --reactUri file:./storybook-static"
   },
   "repository": {
     "type": "git",
@@ -39,8 +39,10 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.4.1",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
+    "enzyme": "^3.11.0",
     "eslint": "^7.18.0",
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-prettier": "^3.3.1",
