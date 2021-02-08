@@ -3,15 +3,15 @@ import { Cell } from "./Cell";
 
 interface Props {
   field?: number[][];
+  onClick: (numb: number) => void;
 }
-
-export const onClick = (children: number) => console.log(children);
 
 export const Field: FC<Props> = ({
   field = [
     [1, 2, 3],
     [4, 5],
   ],
+  onClick = (num) => console.log(num)
 }) => {
   return (
     <div>
