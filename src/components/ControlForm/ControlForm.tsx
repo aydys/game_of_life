@@ -1,29 +1,35 @@
 import React, { FC } from "react";
 import { Formik, Field, Form } from "formik";
+import { Values } from "../Game";
 
-export const ControlForm: FC = () => {
+type Props = {
+  onSubmit: (values: Values) => void
+}
+
+export const ControlForm: FC<Props> = ({ onSubmit }) => {
 
   return <>
     <Formik
       initialValues={{ size: '50x30', speed: 'slow', filled: '25%'}}
-      onSubmit={(values, actions) => {
-        console.log({ values, actions });
-        alert(JSON.stringify(values, null, 2));
-        actions.setSubmitting(false);
+      onSubmit={(values) => {
+        onSubmit(values)
       }}
     >
       <Form>
-        <Field as='select' name='size'>
+        <label htmlFor="size">Size</label>
+        <Field id="size" as='select' name='size'>
           <option>50x30</option>
           <option>70x50</option>
           <option>100x80</option>
         </Field>
-        <Field as='select' name='speed'>
+        <label htmlFor="speed">Speed</label>
+        <Field id='speed' as='select' name='speed'>
           <option>slow</option>
           <option>meduim</option>
           <option>fast</option>
         </Field>
-        <Field as='select' name='filled'>
+        <label htmlFor="filled">Filled</label>
+        <Field id='filled' as='select' name='filled'>
           <option>0</option>
           <option>25%</option>
           <option>50%</option>
