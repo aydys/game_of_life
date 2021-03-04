@@ -8,24 +8,19 @@ describe('ControlForm', () => {
   test('rendering and submitting a basic Formik form', async() => {
     const handleSubmit = jest.fn()
     render(<ControlForm onSubmit={handleSubmit} />)
-    
-    userEvent.click(screen.getByText('50x30'))
-    userEvent.click(screen.getByText('100x80'))
 
-    userEvent.click(screen.getByText('slow'))
-    userEvent.click(screen.getByText('fast'))
-
-    userEvent.click(screen.getByText('25%'))
-    userEvent.click(screen.getByText('50%'))
+    userEvent.selectOptions(screen.getByRole('combobox', {name: /size/i}), 'big')
+    userEvent.selectOptions(screen.getByRole('combobox', {name: /speed/i}), 'medium')
+    userEvent.selectOptions(screen.getByRole('combobox', {name: /filled/i}), '50%')
     
     userEvent.click(screen.getByRole('button', { name: /Submit/i }))
     
     await waitFor(() =>
       expect(handleSubmit).toHaveBeenCalledWith({
-        size: '100x80',
-        speed: 'slow',
-        filled: '25%',
-      }, expect.anything())
+        size: 'big',
+        speed: 'medium',
+        filled: '50%',
+      })
     )
   })
 })

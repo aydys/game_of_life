@@ -18,22 +18,22 @@ export const ControlForm: FC<Props> = ({ onSubmit }) => {
       <Form>
         <label htmlFor="size">Size</label>
         <Field id="size" as='select' name='size'>
-          <option>50x30</option>
-          <option>70x50</option>
-          <option>100x80</option>
+          <option value='small'>50x30</option>
+          <option value='middle'>70x50</option>
+          <option value='big'>100x80</option>
         </Field>
         <label htmlFor="speed">Speed</label>
         <Field id='speed' as='select' name='speed'>
-          <option>slow</option>
-          <option>meduim</option>
-          <option>fast</option>
+          <option value='slow'>slow</option>
+          <option value='medium'>medium</option>
+          <option value='fast'>fast</option>
         </Field>
         <label htmlFor="filled">Filled</label>
         <Field id='filled' as='select' name='filled'>
-          <option>0</option>
-          <option>25%</option>
-          <option>50%</option>
-          <option>75%</option>
+          <option value='0'>0</option>
+          <option value='25%'>25%</option>
+          <option value='50%'>50%</option>
+          <option value='75%'>75%</option>
         </Field>
         <button type="submit">Submit</button>
       </Form>
