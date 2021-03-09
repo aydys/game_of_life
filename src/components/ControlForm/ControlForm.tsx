@@ -1,12 +1,16 @@
 import React, { FC } from "react";
 import { Formik, Field, Form } from "formik";
 import { Values } from "../Game";
+import { ButtonStyled } from "../Styled";
 
 type Props = {
-  onSubmit: (values: Values) => void
+  onSubmit: (values: Values) => void,
+  handleRun: () => void,
+  handleStop: () => void,
+  handleClear: () => void
 }
 
-export const ControlForm: FC<Props> = ({ onSubmit }) => {
+export const ControlForm: FC<Props> = ({ onSubmit, handleRun, handleStop, handleClear }) => {
 
   return <>
     <Formik
@@ -35,11 +39,11 @@ export const ControlForm: FC<Props> = ({ onSubmit }) => {
           <option value='50%'>50%</option>
           <option value='75%'>75%</option>
         </Field>
-        <button type="submit">Submit</button>
+        <ButtonStyled type="submit">Submit</ButtonStyled>
       </Form>
     </Formik>
-    <button>Run</button>
-    <button>Stop</button>
-    <button>Clear</button>
+    <ButtonStyled onClick={handleRun}>Run</ButtonStyled>
+    <ButtonStyled onClick={handleStop}>Stop</ButtonStyled>
+    <ButtonStyled onClick={handleClear}>Clear</ButtonStyled>
   </>
 }

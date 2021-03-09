@@ -9,11 +9,20 @@ export type Values = {
 }
 
 export const Game: FC = () => {
-  const handleSubmit = (values: Values) => {
-    console.log(values)
+  const onSubmit = (values: Values) => console.log(values)
+  const handleClear = () => console.log()
+  const handleRun = () => console.log()
+  const handleStop = () => console.log()
+
+  const handlers = {
+    onSubmit,
+    handleClear,
+    handleRun,
+    handleStop
   }
+
   return <>
     <Field onClick={() => {}} />
-    <ControlForm onSubmit={handleSubmit} />
+    <ControlForm {...handlers} />
   </>
 }
