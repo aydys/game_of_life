@@ -14,7 +14,7 @@ export const ControlForm: FC<Props> = ({ onSubmit, handleRun, handleStop, handle
 
   return <>
     <Formik
-      initialValues={{ size: '50x30', speed: 'slow', filled: '25%'}}
+      initialValues={{ size: '', speed: 'slow', filled: '25%'}}
       onSubmit={(values) => {
         onSubmit(values)
       }}
@@ -22,9 +22,9 @@ export const ControlForm: FC<Props> = ({ onSubmit, handleRun, handleStop, handle
       <Form>
         <label htmlFor="size">Size</label>
         <Field id="size" as='select' name='size'>
-          <option value='small'>50x30</option>
-          <option value='middle'>70x50</option>
-          <option value='big'>100x80</option>
+          <option value='small'>small</option>
+          <option value='middle'>middle</option>
+          <option value='big'>huge</option>
         </Field>
         <label htmlFor="speed">Speed</label>
         <Field id='speed' as='select' name='speed'>
