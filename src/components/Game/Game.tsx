@@ -1,6 +1,7 @@
 import React, { FC, useState, useCallback } from 'react';
 import { Field } from "../Field";
 import { ControlForm } from "../ControlForm";
+import { StartForm } from "../Form";
 
 export type Values = {
   size: string,
@@ -49,7 +50,8 @@ export const Game: FC = () => {
   }
 
   return <>
-    <Field onClick={() => {}} field={field} />
-    <ControlForm {...handlers} />
+    {/* <Field onClick={() => {}} field={field} />
+    <ControlForm {...handlers} /> */}
+    <StartForm />
   </>
 }
