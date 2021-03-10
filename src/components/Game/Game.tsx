@@ -1,8 +1,6 @@
-import React, { FC, useState, useCallback } from 'react';
+import React, { FC, useState } from 'react';
 import { Field } from "../Field";
 import { ControlForm } from "../ControlForm";
-import { StartForm } from "../Form";
-
 export type Values = {
   size: string,
   speed: string,
@@ -50,8 +48,7 @@ export const Game: FC = () => {
   }
 
   return <>
-    {/* <Field onClick={() => {}} field={field} />
-    <ControlForm {...handlers} /> */}
-    <StartForm />
+    <Field onClick={() => {}} field={field} />
+    <ControlForm {...handlers} />
   </>
 }
